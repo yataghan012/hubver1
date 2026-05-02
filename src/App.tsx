@@ -172,7 +172,7 @@ export default function App() {
       <nav className="flex justify-between items-center w-full px-6 lg:px-12 py-4 fixed top-0 z-[60] bg-[#F5F5DC] border-b-4 border-[#02301E] shadow-[8px_8px_0px_0px_#02301E]">
         <div className="flex items-center gap-8">
           <a href="#inicio" onClick={() => { setCurrentView("home"); setActiveTopNav("inicio"); }} className="cursor-pointer">
-            <img src="/logo.png" alt="HUB!" className="h-10 md:h-14 object-contain" />
+            <img src={`${import.meta.env.BASE_URL}logo.png`} alt="HUB!" className="h-10 md:h-14 object-contain" />
           </a>
           <div className="hidden md:flex gap-6 font-headline-lg font-black uppercase tracking-tighter">
             <a className={`hover:-rotate-2 hover:scale-110 transition-transform duration-100 text-[16px] ${activeTopNav === "inicio" && currentView === "home" ? "text-[#E2725B] underline decoration-4 underline-offset-4" : "text-[#02301E] opacity-90"}`} href="#inicio" onClick={() => { setCurrentView("home"); setActiveTopNav("inicio"); }}>INICIO</a>
@@ -265,7 +265,7 @@ export default function App() {
         {/* HERO */}
         <section id="inicio" className="relative min-h-[85vh] overflow-hidden flex items-center border-b-8 border-[#02301E] py-16">
           <video ref={videoRef} autoPlay className="absolute inset-0 w-full h-full object-cover grayscale brightness-40" loop muted playsInline>
-            <source src="/hero.mp4" type="video/mp4" />
+            <source src={`${import.meta.env.BASE_URL}hero.mp4`} type="video/mp4" />
           </video>
           {/* Overlay to ensure readability */}
           <div className="absolute inset-0 bg-[#02301E]/40 md:bg-transparent md:bg-gradient-to-r md:from-[#02301E]/60 md:to-transparent z-[5]"></div>
