@@ -314,7 +314,7 @@ export const MenuCompleto: React.FC<MenuCompletoProps> = ({ onBack, initialCateg
     <div className="bg-[#1c1a18] min-h-screen font-body-md text-[#F5F5DC]">
       
       {/* Header */}
-      <div className="bg-[#02301E] pt-8 lg:pt-16 px-6 lg:pl-20 xl:pl-28 lg:pr-12 pb-8 border-b-8 border-[#E2725B] sticky top-0 md:relative z-[70] md:z-10">
+      <div className="bg-[#02301E] pt-8 lg:pt-16 px-6 lg:pl-20 xl:pl-28 lg:pr-12 pb-8 border-b-8 border-[#E2725B] relative z-10">
         <div className="max-w-5xl mx-auto">
           <button 
             onClick={onBack}
@@ -331,39 +331,41 @@ export const MenuCompleto: React.FC<MenuCompletoProps> = ({ onBack, initialCateg
             </div>
             
             {/* Toggles */}
-            <div className="flex flex-wrap items-center gap-4">
+            <div className="flex flex-col w-full md:w-auto md:flex-row items-stretch md:items-center gap-4">
               <a 
                 href={contacto.pedix} 
                 target="_blank" 
                 rel="noreferrer"
-                className="flex items-center gap-3 px-8 py-4 border-2 border-[#E2725B] bg-[#E2725B] text-[#F5F5DC] uppercase font-label-mono text-[16px] font-black transition-all hover:-translate-y-1 hover:translate-x-1 shadow-[6px_6px_0px_0px_#02301E] active:shadow-none active:translate-x-0 active:translate-y-0"
+                className="flex justify-center items-center gap-3 w-full md:w-auto px-8 py-4 border-2 border-[#E2725B] bg-[#E2725B] text-[#F5F5DC] uppercase font-label-mono text-[16px] font-black transition-all hover:-translate-y-1 hover:translate-x-1 shadow-[4px_4px_0px_0px_#02301E] md:shadow-[6px_6px_0px_0px_#02301E] active:shadow-none active:translate-x-0 active:translate-y-0"
               >
                 <ShoppingBag size={20} /> Pedir Online
               </a>
-              <button 
-                onClick={() => setActiveToggleSinTacc(!activeToggleSinTacc)}
-                className={`flex items-center gap-2 px-4 py-2 border-2 uppercase font-label-mono text-[12px] font-bold transition-colors ${
-                  activeToggleSinTacc ? 'bg-[#E2725B] border-[#E2725B] text-[#F5F5DC]' : 'border-[#F5F5DC]/30 text-[#F5F5DC]/70 hover:border-[#F5F5DC]'
-                }`}
-              >
-                <WheatOff size={16} /> Sin TACC
-              </button>
-              <button 
-                onClick={() => setActiveToggleVeggie(!activeToggleVeggie)}
-                className={`flex items-center gap-2 px-4 py-2 border-2 uppercase font-label-mono text-[12px] font-bold transition-colors ${
-                  activeToggleVeggie ? 'bg-[#02301E] border-[#F5F5DC] text-[#F5F5DC] shadow-[2px_2px_0px_0px_#F5F5DC]' : 'border-[#F5F5DC]/30 text-[#F5F5DC]/70 hover:border-[#F5F5DC]'
-                }`}
-              >
-                <Leaf size={16} /> Veggie
-              </button>
+              <div className="flex items-center justify-between md:justify-start gap-4">
+                <button 
+                  onClick={() => setActiveToggleSinTacc(!activeToggleSinTacc)}
+                  className={`flex-1 md:flex-none justify-center flex items-center gap-2 px-4 py-3 md:py-2 border-2 uppercase font-label-mono text-[12px] font-bold transition-colors ${
+                    activeToggleSinTacc ? 'bg-[#E2725B] border-[#E2725B] text-[#F5F5DC]' : 'border-[#F5F5DC]/30 text-[#F5F5DC]/70 hover:border-[#F5F5DC]'
+                  }`}
+                >
+                  <WheatOff size={16} /> Sin TACC
+                </button>
+                <button 
+                  onClick={() => setActiveToggleVeggie(!activeToggleVeggie)}
+                  className={`flex-1 md:flex-none justify-center flex items-center gap-2 px-4 py-3 md:py-2 border-2 uppercase font-label-mono text-[12px] font-bold transition-colors ${
+                    activeToggleVeggie ? 'bg-[#02301E] border-[#F5F5DC] text-[#F5F5DC] shadow-[2px_2px_0px_0px_#F5F5DC]' : 'border-[#F5F5DC]/30 text-[#F5F5DC]/70 hover:border-[#F5F5DC]'
+                  }`}
+                >
+                  <Leaf size={16} /> Veggie
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       {/* Sticky Categories Navigation */}
-      <div className="sticky top-[92px] z-[50] bg-[#1c1a18] border-b border-[#F5F5DC]/20 shadow-xl overflow-x-auto scroolbar-hide">
-        <ul className="flex max-w-5xl mx-auto px-6 lg:pl-20 xl:pl-28 lg:pr-12 py-4 gap-6 min-w-max overflow-x-auto">
+      <div className="sticky top-[76px] md:top-[92px] z-[50] bg-[#1c1a18] border-b border-[#F5F5DC]/20 shadow-xl overflow-x-auto scrollbar-hide">
+        <ul className="flex max-w-5xl mx-auto px-6 lg:pl-20 xl:pl-28 lg:pr-12 py-4 gap-6 min-w-max">
 
           {MENU_DATA.map(cat => {
             return (
@@ -457,10 +459,10 @@ export const MenuCompleto: React.FC<MenuCompletoProps> = ({ onBack, initialCateg
                   {otherItems.map(item => (
                     <div key={item.id} className="border-b border-[#F5F5DC]/20 pb-6 flex flex-col justify-center hover:bg-[#F5F5DC]/5 p-4 -mx-4 rounded-sm transition-colors">
                       <div className="flex justify-between items-start gap-4 mb-2">
-                        <h4 className="font-headline-md font-bold text-xl uppercase text-[#F5F5DC]">
+                        <h4 className="font-headline-md font-bold text-lg md:text-xl uppercase text-[#F5F5DC]">
                           {item.name}
                         </h4>
-                        <span className="font-headline-md font-black text-xl text-[#E2725B] whitespace-nowrap">
+                        <span className="font-headline-md font-black text-lg md:text-xl text-[#E2725B] whitespace-nowrap">
                           {item.price}
                         </span>
                       </div>

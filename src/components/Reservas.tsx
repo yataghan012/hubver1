@@ -8,7 +8,7 @@ interface ReservasProps {
 }
 
 const SECTORS = [
-  { id: 'terraza', label: 'TERRAZA', badge: 'ABIERTA', desc: 'Al aire libre. Ideal para noches frescas.' },
+  { id: 'terraza', label: 'TERRAZA', badge: 'ABIERTA', desc: 'Terraza techada y protegida.' },
   { id: 'salon', label: 'SALÓN CLIMATIZADO', badge: 'CLIMATIZADO', desc: 'Interior con música y aire.' },
   { id: 'barra', label: 'BARRA', badge: 'CERCA DEL BARMAN', desc: 'Acción de cerca. Ideal para pocos.' }
 ];

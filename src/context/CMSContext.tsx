@@ -80,8 +80,8 @@ const CMSContext = createContext<CMSContextProps | undefined>(undefined);
 
 // InicialStates predeterminados traídos del código
 const initialHorarios: Horarios = {
-  lunes: 'Cerrado',
-  martes: 'Cerrado',
+  lunes: '08:00 - 01:30',
+  martes: '08:00 - 01:30',
   miercoles: '08:00 - 01:30',
   jueves: '08:00 - 04:00',
   viernes: '08:00 - 04:00',
@@ -91,7 +91,7 @@ const initialHorarios: Horarios = {
 
 const initialContacto: Contacto = {
   direccion: 'Mariano Fragueiro 2151, Córdoba',
-  textoGuia: 'La casona con la puerta roja. No hay cartel.',
+  textoGuia: '',
   whatsapp: '+54 9 351 123-4567',
   pedix: 'https://pedix.app/hub-bar-coffee',
   instagram: 'https://www.instagram.com/hub.cordoba/'
@@ -219,13 +219,33 @@ export const CMSProvider: React.FC<{children: ReactNode}> = ({ children }) => {
   });
 
   const [horarios, setHorarios] = useState<Horarios>(() => {
+    // If we have saved data, we use it, but if it says "Cerrado" for Mon/Tue we might want to override?
+    // Actually, following user instructions we should update the initial state.
+    // The user will probably want the app to reflect these hours immediately.
     const saved = localStorage.getItem('hub_horarios_v5');
-    return saved ? JSON.parse(saved) : initialHorarios;
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      // Forzar actualizacion si detectamos que estan desactualizados o simplemente usar los nuevos por defecto si el usuario lo pide.
+      // Pero mejor solo cambio el initialHorarios y si el usuario quiere resetear puede hacerlo desde el admin (si tuviera reset).
+      // Sin embargo, para mayor impacto inmediato en esta sesion, los actualizaré aqui si son los viejos conocidos.
+      if (parsed.lunes === 'Cerrado') {
+        return initialHorarios; // Reset to new ones if they are clearly old
+      }
+      return parsed;
+    }
+    return initialHorarios;
   });
 
   const [contacto, setContacto] = useState<Contacto>(() => {
     const saved = localStorage.getItem('hub_contacto_v5');
-    return saved ? JSON.parse(saved) : initialContacto;
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      if (parsed.textoGuia === 'La casona con la puerta roja. No hay cartel.') {
+        return { ...parsed, textoGuia: '' };
+      }
+      return parsed;
+    }
+    return initialContacto;
   });
 
   // Effect for saving

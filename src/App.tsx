@@ -247,7 +247,7 @@ export default function App() {
           <a className={getSidebarClasses("#eventos")} href="#eventos" onClick={() => { setActiveSidebarLink("#eventos"); setCurrentView("home"); setActiveTopNav("inicio"); }}>
             <Ticket className="mr-2" size={24} /> GIGS
           </a>
-          <a className={getSidebarClasses("#menu")} href="#menu" onClick={() => { setActiveSidebarLink("#menu"); setCurrentView("home"); setActiveTopNav("inicio"); }}>
+          <a className={getSidebarClasses("#menu")} href="#menu" onClick={() => { setActiveSidebarLink("#menu"); setMenuInitialCategory("tragos"); setCurrentView("menuCompleto"); setActiveTopNav("menu"); }}>
             <Wine className="mr-2" size={24} /> TRAGOS
           </a>
           <a className={getSidebarClasses("#origen")} href="#origen" onClick={() => { setActiveSidebarLink("#origen"); setCurrentView("home"); setActiveTopNav("inicio"); }}>
@@ -315,10 +315,10 @@ export default function App() {
               <div className="group relative overflow-hidden bg-[#F5F5DC] border-r-4 border-[#02301E] last:border-r-0 p-8 min-h-[500px] flex flex-col justify-end">
                 <img alt="Morning coffee" className="absolute inset-0 w-full h-full object-cover opacity-20 grayscale group-hover:opacity-40 transition-opacity" src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&w=800&q=80" />
                 <div className="relative z-10">
-                  <span className="font-label-mono text-[12px] font-bold bg-[#E2725B] text-[#F5F5DC] px-3 py-1 mb-4 inline-block">07:00 – 13:00</span>
+                  <span className="font-label-mono text-[12px] font-bold bg-[#E2725B] text-[#F5F5DC] px-3 py-1 mb-4 inline-block">08:00 – 13:00</span>
                   <h3 className="font-display-xl font-black text-5xl uppercase mb-4 tracking-tight">MAÑANA</h3>
                   <p className="font-body-lg text-[18px] font-bold">CAFÉ + TRABAJO</p>
-                  <p className="mt-4 opacity-80 text-[16px]">Doble espresso, WiFi de verdad, y la luz de la mañana entrando por la casona. El tercer lugar que necesitabas sin darte cuenta.</p>
+                  <p className="mt-4 opacity-80 text-[16px]">Doble espresso, WiFi de verdad, y la luz de la mañana entrando por la casona. El lugar donde empezás el día con ganas.</p>
                 </div>
               </div>
               {/* Midday */}
@@ -335,7 +335,7 @@ export default function App() {
               <div className="group relative overflow-hidden bg-[#02301E] text-[#F5F5DC] p-8 min-h-[500px] flex flex-col justify-end">
                 <img alt="Evening music" className="absolute inset-0 w-full h-full object-cover opacity-30 grayscale group-hover:opacity-50 transition-opacity" src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80" />
                 <div className="relative z-10">
-                  <span className="font-label-mono text-[12px] font-bold bg-[#E2725B] text-[#F5F5DC] px-3 py-1 mb-4 inline-block">18:00 – 04:30</span>
+                  <span className="font-label-mono text-[12px] font-bold bg-[#E2725B] text-[#F5F5DC] px-3 py-1 mb-4 inline-block">18:00 – 04:00</span>
                   <h3 className="font-display-xl font-black text-5xl uppercase mb-4 tracking-tight">NOCHE</h3>
                   <p className="font-body-lg text-[18px] font-bold">TRAGOS + MÚSICA</p>
                   <p className="mt-4 opacity-80 text-[16px]">La transición. La hora en que la cafetería muta. Eventos, fernet, y la gente que hace que valga la pena quedarse.</p>
@@ -563,7 +563,7 @@ export default function App() {
                   <div className="flex text-[#E2725B] mb-6">
                     <Star fill="currentColor" size={20} className="mr-1" /><Star fill="currentColor" size={20} className="mr-1" /><Star fill="currentColor" size={20} className="mr-1" /><Star fill="currentColor" size={20} className="mr-1" /><Star fill="currentColor" size={20} className="mr-1" />
                   </div>
-                  <p className="font-body-md mb-6 italic text-lg leading-relaxed font-semibold">"Pasé una hora trabajando en un rincón, pedí el café más rico del barrio, y sin querer me quedé cuatro. Estoy bastante seguro de que me adopté a mí mismo."</p>
+                  <p className="font-body-md mb-6 italic text-lg leading-relaxed font-semibold">"Si hay un aspecto en el que sobresalen de manera casi unánime es en la calidad de su atención; el personal es amable, atento y profesional"</p>
                 </div>
                 <p className="font-label-bold font-bold text-sm text-[#02301E] border-t-2 border-[#02301E] pt-4">— María R. · Google Reseñas</p>
               </div>
@@ -574,7 +574,7 @@ export default function App() {
                     <span className="bg-[#02301E] p-1.5"><MessageCircle size={20} color="#F5F5DC" /></span>
                     <span className="font-label-bold font-bold text-sm tracking-widest">@GONZALO_F_CBA</span>
                   </div>
-                  <p className="font-body-md mb-8 font-bold leading-relaxed text-[16px]">"Vine por el 'sushi libre' sin saber qué esperar. Esto va a sonar dramático pero: cambió mis planes para la noche. Sushi como es en su salsa. Pedí el Midnight Mezcal de yapa."</p>
+                  <p className="font-body-md mb-8 font-bold leading-relaxed text-[16px]">"El lugar es de ensueño. Ofrece un ambiente cómodo y accesible, con aire acondicionado y wifi; ideal para reuniones o disfrutar de una buena comida"</p>
                 </div>
                 <p className="font-label-bold font-bold text-[12px] uppercase tracking-tighter opacity-80 border-t border-[#F5F5DC] pt-4">— Gonzalo F. · Google Reseñas</p>
               </div>
@@ -607,7 +607,7 @@ export default function App() {
                   <h3 className="font-display-xl font-black text-4xl text-[#F5F5DC] leading-none tracking-tight">TERRAZA</h3>
                   <span className="bg-[#02301E] text-[#F5F5DC] text-[10px] font-label-mono font-black px-3 py-1 uppercase tracking-widest">ABIERTA</span>
                 </div>
-                <p className="text-[#F5F5DC] font-body-md text-[16px] mb-10 flex-grow opacity-90 leading-relaxed font-semibold">Al aire libre, arquitectura histórica. Ideal para grupos de 2 a 8. El ruido llega pero el cielo también. Nuestra recomendación para noches de semana.</p>
+                <p className="text-[#F5F5DC] font-body-md text-[16px] mb-10 flex-grow opacity-90 leading-relaxed font-semibold">Techada, arquitectura histórica. Ideal para grupos de 2 a 8. El ruido llega pero el cielo también. Nuestra recomendación para noches de semana.</p>
                 <div className="mb-10 space-y-3">
                   <p className="text-[10px] font-label-mono font-black uppercase text-[#02301E] flex items-center gap-2 bg-[#F5F5DC] p-2 inline-block shadow-[2px_2px_0px_#02301E]"><AlertTriangle className="text-xs w-4 h-4" /> En noches de evento música fuerte desde las 22:00</p>
                 </div>
@@ -654,7 +654,6 @@ export default function App() {
                     <div>
                       <p className="font-bold text-[#02301E] font-label-mono uppercase tracking-widest text-[14px] mb-1">Dirección</p>
                       <p className="font-semibold">Mariano Fragueiro 2151, Córdoba.</p>
-                      <p className="opacity-80 text-[14px]">La casona con la puerta roja. No hay cartel.</p>
                     </div>
                   </div>
 
@@ -663,9 +662,8 @@ export default function App() {
                     <div>
                       <p className="font-bold text-[#02301E] font-label-mono uppercase tracking-widest text-[14px] mb-2">Horarios</p>
                       <ul className="space-y-2 font-semibold">
-                        <li className="flex justify-between w-64 border-b border-[#02301E]/20 pb-1"><span>Lun — Jue</span> <span>07:00 - 02:00</span></li>
-                        <li className="flex justify-between w-64 border-b border-[#02301E]/20 pb-1 text-[#02301E] font-black"><span>Vie — Sáb</span> <span>07:00 - 04:30</span></li>
-                        <li className="flex justify-between w-64 pt-1"><span>Domingo</span> <span>10:00 - 02:00</span></li>
+                        <li className="flex justify-between w-64 border-b border-[#02301E]/20 pb-1"><span>Dom — Mié</span> <span>08:00 - 01:30</span></li>
+                        <li className="flex justify-between w-64 pt-1 text-[#02301E] font-black"><span>Jue — Sáb</span> <span>08:00 - 04:00</span></li>
                       </ul>
                     </div>
                   </div>
@@ -725,7 +723,7 @@ export default function App() {
             <div className="lg:col-span-1">
               <h3 className="font-display-xl text-5xl font-black italic tracking-tighter drop-shadow-[4px_4px_0px_#E2725B] mb-6">HUB!</h3>
               <p className="font-body-md opacity-80 text-[16px] leading-relaxed">
-                El tercer lugar que necesitabas. Café de especialidad de día, tragos de autor y música cuando cae el sol. No somos gastronómicos, somos tu tribu.
+                De 8AM a 4:30AM. Para el café del lunes y el trago del viernes.
               </p>
             </div>
 
@@ -746,7 +744,10 @@ export default function App() {
               <ul className="space-y-4 font-body-md text-[16px]">
                 <li className="flex items-start gap-3">
                   <MapPin className="mt-1 shrink-0 text-[#E2725B]" size={20} />
-                  <span className="opacity-90">{contacto.direccion}<br/>{contacto.textoGuia}</span>
+                  <span className="opacity-90">
+                    {contacto.direccion}
+                    {contacto.textoGuia && <><br/>{contacto.textoGuia}</>}
+                  </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Clock className="mt-1 shrink-0 text-[#E2725B]" size={20} />
