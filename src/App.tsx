@@ -161,7 +161,7 @@ export default function App() {
 
   const getSidebarClasses = (href: string) => {
     if (activeSidebarLink === href) {
-      return "bg-[#02301E] text-[#F5F5DC] translate-x-4 skew-y-2 p-4 block border-y-2 border-[#F5F5DC] flex items-center shadow-[4px_4px_0px_#F5F5DC]";
+      return "bg-[#02301E] text-[#F5F5DC] translate-x-4 p-4 block border-2 border-[#F5F5DC] flex items-center shadow-[4px_4px_0px_#F5F5DC,0_0_1px_#F5F5DC] [transform:skewY(2deg)_translateZ(0)_rotate(0.02deg)] [backface-visibility:hidden] [will-change:transform]";
     }
     return "text-[#F5F5DC] p-4 hover:translate-x-2 transition-transform hover:bg-[#F5F5DC] hover:text-[#02301E] flex items-center font-bold";
   };
