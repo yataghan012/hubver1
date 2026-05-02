@@ -1,20 +1,30 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# HUB! — Alta Córdoba
 
-# Run and deploy your AI Studio app
+¡Bienvenido al repositorio de **HUB!**, el sitio web oficial de la casona más vibrante de Alta Córdoba. 
 
-This contains everything you need to run your app locally.
+HUB! es un espacio multifuncional diseñado para adaptarse a cada momento del día: desde café de especialidad y espacios de trabajo por la mañana, hasta platos compartidos y noches de tragos con música en vivo.
 
-View your app in AI Studio: https://ai.studio/apps/e88a2c6a-5009-40d0-9992-10a962e5db54
+## 🚀 Características
 
-## Run Locally
+- **Menú Dinámico:** Explora nuestro catálogo de productos filtrado por categorías (Cafetería, Almuerzos, Tragos, etc.).
+- **Agenda de Eventos:** Calendario interactivo con noches temáticas, DJs y música en vivo (The Noise Project).
+- **Sistema de Reservas:** Formulario integrado para asegurar tu lugar en los distintos sectores de la casona (Terraza, Hall, Private).
+- **Vibe Check:** Estado en tiempo real de apertura/cierre basado en horarios locales.
+- **Admin Panel:** Panel interno para la gestión de contenidos (CMS) de platos, eventos y horarios.
+- **Diseño Brutalista:** Estética audaz con sombras marcadas, tipografía Epilogue y una paleta de colores Terracota/Verde Bosque.
 
-**Prerequisites:**  Node.js
+## 🛠️ Tech Stack
 
+- **Frontend:** [React 19](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+- **Build Tool:** [Vite](https://vitejs.dev/)
+- **Estilos:** [Tailwind CSS 4](https://tailwindcss.com/)
+- **Animaciones:** [Motion](https://motion.dev/)
+- **Iconos:** [Lucide React](https://lucide.dev/)
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## 📦 Despliegue
+
+Este sitio está configurado para desplegarse automáticamente en **GitHub Pages** mediante GitHub Actions. 
+Cada vez que se sincronizan los cambios a la rama principal, el workflow `.github/workflows/deploy.yml` compila el proyecto y lo publica.
+
+---
+*Hecho por la tribu de HUB! · Córdoba, Argentina.*

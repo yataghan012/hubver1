@@ -36,9 +36,9 @@ jobs:
         with:
           node-version: 20
       - name: Install dependencies
-        run: npm install
+        run: npm install --no-package-lock
       - name: Build
-        run: npm run build
+        run: VITE_IS_GH_PAGES=true npm run build
       - name: Create 404.html
         run: cp dist/index.html dist/404.html
       - name: Setup Pages

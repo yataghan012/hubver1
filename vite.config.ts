@@ -5,10 +5,11 @@ import {defineConfig, loadEnv} from 'vite';
 
 export default defineConfig(({mode}) => {
   const env = loadEnv(mode, '.', '');
-  const isProd = mode === 'production';
+  // Solo aplicamos la base de GitHub Pages si estamos en el build de GitHub Actions
+  const isGitHubPages = env.VITE_IS_GH_PAGES === 'true';
   
   return {
-    base: isProd ? '/hubver1/' : '/',
+    base: isGitHubPages ? '/hubver1/' : '/',
     plugins: [react(), tailwindcss()],
     define: {
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
