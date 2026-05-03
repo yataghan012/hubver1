@@ -35,7 +35,7 @@ export const INITIAL_MENU_DATA: MenuCategory[] = [
     id: 'tragos',
     title: 'Tragos',
     items: [
-      { id: 'drink-1', name: 'Hub! Signature', description: 'Gin artesanal, almíbar de pomelo, jugo de lima fresco, bitter de lavanda y tónica premium.', price: '$7.500', featuredImage: 'https://images.unsplash.com/photo-1536935338788-df710dc25c34' },
+      { id: 'drink-1', name: 'Hub! Signature', description: 'Gin artesanal, almíbar de pomelo, jugo de lima fresco, bitter de lavanda y tónica premium.', price: '$7.500', featuredImage: 'https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=800&q=80' },
       { id: 'drink-2', name: 'Smoked Negroni', description: 'Campari, Gin London Dry, Vermouth Rosso y un toque de humo de romero en mesa.', price: '$8.500', featuredImage: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87' },
       { id: 'drink-3', name: 'Tropical Spritz', description: 'Aperol, maracuyá fresco, espumante extra brut, golpe de soda y naranja.', price: '$7.500', featuredImage: 'https://images.unsplash.com/photo-1560512823-829485b8bf24' },
       { id: 'drink-4', name: 'Gin Tonic Royale', description: 'Gin de autor, tónica premium, pepino fresco y pimienta rosa macerada.', price: '$7.200', featuredImage: 'https://images.unsplash.com/photo-1551538827-9c037cb4f32a' }

@@ -202,7 +202,19 @@ import { INITIAL_MENU_DATA } from '../initialData';
 export const CMSProvider: React.FC<{children: ReactNode}> = ({ children }) => {
   const [menu, setMenu] = useState<MenuCategory[]>(() => {
     const saved = localStorage.getItem('hub_menu_v5');
-    return saved ? JSON.parse(saved) : INITIAL_MENU_DATA;
+    if (saved) {
+      const parsed: MenuCategory[] = JSON.parse(saved);
+      // Clean up broken drink image
+      const tragos = parsed.find(c => c.id === 'tragos');
+      if (tragos) {
+        const drink1 = tragos.items.find(i => i.id === 'drink-1');
+        if (drink1 && drink1.featuredImage === 'https://images.unsplash.com/photo-1536935338788-df710dc25c34') {
+          drink1.featuredImage = 'https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=800&q=80';
+        }
+      }
+      return parsed;
+    }
+    return INITIAL_MENU_DATA;
   });
   
   const [eventos, setEventos] = useState<Evento[]>(() => {

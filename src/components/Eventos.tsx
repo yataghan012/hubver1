@@ -199,7 +199,7 @@ export function Eventos({ onBack, onReservar }: EventosProps) {
           </button>
           
           <h1 className="font-display-xl text-5xl md:text-7xl lg:text-[84px] text-[#F5F5DC] font-black uppercase leading-none drop-shadow-[6px_6px_0px_#E2725B] tracking-tight mb-4 break-words">
-            GIGS & <br/><span className="text-[#E2725B]">EVENTOS</span>
+            GIGS & <br/>EVENTOS
           </h1>
           <p className="font-body-lg text-[#F5F5DC] text-[18px] md:text-[22px] max-w-2xl opacity-90 border-l-4 border-[#E2725B] pl-4">
             Noches temáticas, bandas en vivo y experiencias gastronómicas en Alta Córdoba.
